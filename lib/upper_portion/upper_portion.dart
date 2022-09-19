@@ -17,10 +17,6 @@ class UpperPortion extends StatelessWidget {
             fit: BoxFit.fill,
             image: AssetImage('assets/Vector.png'),
           ),
-          gradient: LinearGradient(
-              begin: Alignment.center,
-              end: Alignment.topCenter,
-              colors: [Colors.black, Colors.white]),
         ),
       ),
       Container(

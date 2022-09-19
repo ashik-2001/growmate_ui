@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growmate_ui/mid_portion/mid.dart';
 import 'package:growmate_ui/upper_portion/upper_portion.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme:
           ThemeData(brightness: Brightness.dark, primaryColor: Colors.blueGrey),
       home: const Scaffold(
-        backgroundColor: Colors.black54,
+        backgroundColor: Colors.white,
         body: SafeArea(child: HomePage()),
       ),
     );
@@ -31,10 +32,8 @@ class HomePage extends StatelessWidget {
     return Column(
       children: [
         UpperPortion(),
-        Container(
-          height: height * 0.1,
-          color: Colors.green,
-        ),
+        MiddlePortion(),
+        
         Container(
           height: height * 0.4,
           color: Colors.purple,
