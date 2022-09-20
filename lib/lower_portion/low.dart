@@ -57,7 +57,7 @@ class _LowerPortionState extends State<LowerPortion>
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 5, 0, 0),
             child: Container(
-              height: height * 0.30,
+              height: 240,
               width: width,
               child: TabBarView(controller: _tabcontroller, children: [
                 _research(context),

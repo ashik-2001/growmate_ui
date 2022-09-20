@@ -64,6 +64,10 @@ class _NavigationBarState extends State<NavigationBar> {
       'Index 2: School',
       style: optionStyle,
     ),
+    Text(
+      'Index 2: School',
+      style: optionStyle,
+    ),
   ];
 
   void _onItemTapped(int index) {
@@ -80,23 +84,32 @@ class _NavigationBarState extends State<NavigationBar> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        items: const <BottomNavigationBarItem>[
+        elevation: 0,
+        selectedItemColor: Colors.black,
+        selectedIconTheme: IconThemeData(color: Colors.white),
+        // backgroundColor: Colors.white,
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            
+            icon: Image.asset('assets/icons/news.png',color: Color(0xFF000000),),
+            label: '',
+            activeIcon:Image.asset('assets/icons/smarket.png'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Image.asset('assets/icons/markets.png'),
+            label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Image.asset('assets/icons/portfolio.png'),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset('assets/icons/profile.png'),
+            label: '',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        // selectedItemColor: Colors.pink,
         onTap: _onItemTapped,
       ),
     );
