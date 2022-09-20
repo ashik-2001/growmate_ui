@@ -49,6 +49,7 @@ class UpperPortion extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       'Will China invade Taiwan before end september? ',
                       style: const TextStyle(
+                        color: Colors.white,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'lato',

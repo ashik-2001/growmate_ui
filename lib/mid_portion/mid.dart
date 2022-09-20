@@ -8,8 +8,8 @@ class MiddlePortion extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    return Stack(
-      children: [Container(
+    return Stack(children: [
+      Container(
         height: height * 0.1,
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -32,11 +32,18 @@ class MiddlePortion extends StatelessWidget {
                     children: const [
                       Text(
                         'CHANCE',
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.white,
+                        ),
                       ),
-                      Text('11%',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 28))
+                      Text(
+                        '11%',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 28),
+                      )
                     ],
                   ),
                   SizedBox(
@@ -57,12 +64,16 @@ class MiddlePortion extends StatelessWidget {
                         Text(
                           '24H',
                           style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.normal),
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal),
                         ),
                         Text(
                           '+25495\$',
                           style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.normal),
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal),
                         )
                       ],
                     ),
@@ -85,7 +96,9 @@ class MiddlePortion extends StatelessWidget {
                         Text(
                           '\$09',
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
                         Transform.scale(
                           scale: 2.5,
@@ -104,12 +117,14 @@ class MiddlePortion extends StatelessWidget {
                         Text(
                           '\$89',
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
                         Transform.scale(
                           scale: 2.5,
                           child: IconButton(
-                            onPressed: () {print('a');},
+                            onPressed: () {},
                             icon: new Image.asset("assets/icons/noB.png"),
                           ),
                         ),
@@ -130,12 +145,12 @@ class MiddlePortion extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fitHeight,
-            colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.7)  , BlendMode.dstOut),
+            colorFilter: ColorFilter.mode(
+                Colors.white.withOpacity(0.7), BlendMode.dstOut),
             image: AssetImage('assets/coins.png'),
           ),
-        ),)
-      ]
-
-    );
+        ),
+      )
+    ]);
   }
 }
