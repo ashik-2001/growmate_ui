@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growmate_ui/reactions/reactions.dart';
 
 class LowerPortion extends StatefulWidget {
   const LowerPortion({Key? key}) : super(key: key);
@@ -20,51 +21,57 @@ class _LowerPortionState extends State<LowerPortion>
       color: Colors.white,
       child: Column(
         children: [
-          Container(
-            width: width,
-            height: 45,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-              child: TabBar(
-                  isScrollable: true,
-                  unselectedLabelColor: Color(0xFF687684),
-                  indicatorColor: Color(0xFFE432C1),
-                  indicatorSize: TabBarIndicatorSize.label,
-                  labelColor: Color(0xFFE432C1),
-                  controller: _tabcontroller,
-                  tabs: [
-                    Container(
-                      width: width / 3,
-                      child: Tab(
-                        text: 'Research & News',
-                      ),
-                    ),
-                    Container(
-                      width: width / 6,
-                      child: Tab(
-                        text: 'Reactions',
-                      ),
-                    ),
-                    Container(
-                      width: width / 6,
-                      child: Tab(
-                        text: 'Related',
-                      ),
-                    )
-                  ]),
-            ),
+          Stack(
+            children: [
+              Container(
+                width: width,
+                height: 45,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                  child: TabBar(
+                      isScrollable: true,
+                      unselectedLabelColor: Color(0xFF687684),
+                      indicatorColor: Color(0xFFE432C1),
+                      indicatorSize: TabBarIndicatorSize.label,
+                      labelColor: Color(0xFFE432C1),
+                      controller: _tabcontroller,
+                      tabs: [
+                        Container(
+                          width: width / 3,
+                          child: Tab(
+                            text: 'Research & News',
+                          ),
+                        ),
+                        Container(
+                          width: width / 6,
+                          child: Tab(
+                            text: 'Reactions',
+                          ),
+                        ),
+                        Container(
+                          width: width / 6,
+                          child: Tab(
+                            text: 'Related',
+                          ),
+                        )
+                      ]),
+                ),
+              ),
+              Container(
+                width: width,
+                height: 52,
+                child: Align(alignment: Alignment.bottomCenter,child: Divider(),),
+              )
+            ],
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 5, 0, 0),
+            padding: const EdgeInsets.fromLTRB(20, 1, 0, 0),
             child: Container(
               height: 240,
               width: width,
               child: TabBarView(controller: _tabcontroller, children: [
                 _research(context),
-                Text(
-                  'b',
-                  style: TextStyle(color: Colors.black),
-                ),
+                Reactions(),
                 Text(
                   'c',
                   style: TextStyle(color: Colors.black),

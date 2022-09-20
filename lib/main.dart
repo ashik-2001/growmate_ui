@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:growmate_ui/lower_portion/low.dart';
-import 'package:growmate_ui/mid_portion/mid.dart';
-import 'package:growmate_ui/upper_portion/upper_portion.dart';
+import 'package:growmate_ui/Research/mid_portion/mid.dart';
+import 'package:growmate_ui/Research/upper_portion/upper_portion.dart';
 
 void main() {
   runApp(const MyApp());
