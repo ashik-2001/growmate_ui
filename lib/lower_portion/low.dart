@@ -80,7 +80,8 @@ class _LowerPortionState extends State<LowerPortion>
   Widget _research(context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-
+    String body2 = 'Most people the BBC spoke to do not believe China is about to attack Taiwan. "They\'re a bunch of gangsters," said one man fishing on the...';
+    String body1 = 'Last week, the dire warnings that appeared in the Wall Street Journal, The Economist and Foreign Affairs about China\'s imminent war with or...';
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -199,65 +200,77 @@ class _LowerPortionState extends State<LowerPortion>
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                Container(
-                  height: 8,
-                  width: width / 1.9,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(2),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Thehill',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              '1 Sept',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 15,),
-                            ),
-                          ],
-                        ),
-                        Text(
-                      'Last week, the dire warnings that appeared in the Wall Street Journal, The dirs about China\'s imminent war with or...',
-                      style: TextStyle(color: Colors.black, fontSize: 12),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: IconButton(onPressed: (){}, icon: Image.asset('assets/icons/sricon.png'))),
-                      ],
-                    ),
-                  ),
-                ),
-                Text(
-                  '1% No Resolve',
-                  style: TextStyle(color: Colors.black),
-                )
+                _cards('Thehill', body1, '1 Sept', width),
+                _cards('BBC', body2, '1 Sept', width),
+                _cards('Third', 'Some para', '1 Sept', width),
+                
               ],
             ),
           ),
         ),
       ],
+    );
+  }
+
+
+
+
+  Widget _cards(String head, String body, String date,width){
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0,1,15,1),
+      child: Container(
+                    height: 8,
+                    width: width / 1.9,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(2),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 3,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                head,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                date,
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            body,
+                            style: TextStyle(color: Colors.black, fontSize: 12),
+                          ),
+                          Align(
+                              alignment: Alignment.bottomRight,
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: Image.asset('assets/icons/sricon.png'))),
+                        ],
+                      ),
+                    ),
+                  ),
     );
   }
 }
