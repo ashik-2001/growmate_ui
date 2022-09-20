@@ -1,4 +1,7 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:growmate_ui/lower_portion/low.dart';
 import 'package:growmate_ui/mid_portion/mid.dart';
 import 'package:growmate_ui/upper_portion/upper_portion.dart';
 
@@ -25,19 +28,19 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-    return Column(
+   return Column(
       children: [
         UpperPortion(),
         MiddlePortion(),
-        
+        LowerPortion(),
         Container(
-          height: height * 0.4,
-          color: Colors.purple,
-        )
+          height: height*0.1,
+          color: Colors.black,
+        ),
       ],
     );
   }

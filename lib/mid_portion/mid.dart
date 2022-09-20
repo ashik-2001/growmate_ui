@@ -67,6 +67,9 @@ class MiddlePortion extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    width: width * 0.04,
+                  )
                 ],
               )
             ]),
@@ -106,7 +109,7 @@ class MiddlePortion extends StatelessWidget {
                         Transform.scale(
                           scale: 2.5,
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {print('a');},
                             icon: new Image.asset("assets/icons/noB.png"),
                           ),
                         ),
