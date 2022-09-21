@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:growmate_ui/reactions/reactions.dart';
+import 'package:growmate_ui/related/related.dart';
 
 class LowerPortion extends StatefulWidget {
   const LowerPortion({Key? key}) : super(key: key);
@@ -72,9 +73,9 @@ class _LowerPortionState extends State<LowerPortion>
               child: TabBarView(controller: _tabcontroller, children: [
                 _research(context),
                 Reactions(),
-                Text(
-                  'c',
-                  style: TextStyle(color: Colors.black),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0,0,20,0),
+                  child: RelatedTab(),
                 ),
               ]),
             ),
